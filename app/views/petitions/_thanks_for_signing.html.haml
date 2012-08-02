@@ -8,6 +8,8 @@
   .arrow
 .tweet
   %a.twitter-share-button{'data-url' => @tweetable_url} Tweet
+.fb_request
+  %input{:onclick => "sendRequestViaMultiFriendSelector(); return false;", :type => "button", :value => "Send Request to your friends"}/
 - if fb_action_like_popup == "facebook_share"
   .fb_share.btn.btn-primary Share on Facebook
   .fb_share_message

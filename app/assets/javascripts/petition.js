@@ -22,7 +22,8 @@ function initFacebookApp() {
       appId:$('meta[property="fb:app_id"]').attr("content"),
       status:true, // check login status
       cookie:true, // enable cookies to allow the server to access the session
-      xfbml:true  // parse XFBML
+      xfbml:true,  // parse XFBML
+      frictionless:true // for "Facebook Request"
     });
   }
 }
@@ -206,4 +207,15 @@ function initSharePetition() {
   setupShareFacebookButton();
   bindFacebookPopupButton();
   drawModalAfterSigning();
+}
+
+function sendRequestViaMultiFriendSelector() {
+  FB.ui({method: 'apprequests',
+    message: 'My Great Request'
+  }, requestCallback);
+}
+
+function requestCallback(response) {
+  console.log("Something happened");
+  console.log(response);
 }
