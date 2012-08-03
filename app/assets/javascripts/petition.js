@@ -210,7 +210,8 @@ function initSharePetition() {
 
 function sendRequestViaMultiFriendSelector() {
   FB.ui({method: 'apprequests',
-    message: 'My Great Request'
+    message: 'My Great Request',
+    redirect_uri: 'http://martin.watchdog.net/'
   }, requestCallback);
 }
 
